@@ -1,0 +1,1 @@
+# Operacje na kolekcjach - `find()`, `every()`, `some()`

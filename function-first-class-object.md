@@ -1,0 +1,1 @@
+# Funkcja - obiekt pierwszej klasy
