@@ -59,6 +59,15 @@ for(let i = 0; i < students.length; i += 1) {
 }
 ```
 
+Można nieco usprawnić ciało pętli tworząc zmienną `student`, która przechowuje element tablicy, który nas aktualnie interesuje.
+
+```js
+for(let i = 0; i < students.length; i += 1) {
+  let student = students[i];
+  console.log(student);
+}
+```
+
 Korzystając z metody `Array.forEach()` możemy skupić się na tym co chcemy zrobić z elementami tablicy, a nie na tym jak po niej iterować.
 
 ```js
