@@ -8,15 +8,15 @@ W przykładach będziemy korzystali z tablicy `students`.
 const students = [
   {
     "id": 0,
-    "firstname": "Christina",
-    "lastName": "Richmond",
+    "firstName": "Christina",
+    "lastname": "Richmond",
     "age": 19,
     "eyeColor": "green",
     "isActive": true
   },
   {
     "id": 1,
-    "firstname": "Austin",
+    "firstName": "Austin",
     "lastName": "Wooten",
     "age": 21,
     "eyeColor": "blue",
@@ -24,7 +24,7 @@ const students = [
   },
   {
     "id": 2,
-    "firstname": "Viola",
+    "firstName": "Viola",
     "lastName": "Shelton",
     "age": 20,
     "eyeColor": "blue",
@@ -32,7 +32,7 @@ const students = [
   },
   {
     "id": 3,
-    "firstname": "Marisol",
+    "firstName": "Marisol",
     "lastName": "Sargent",
     "age": 26,
     "eyeColor": "brown",
@@ -40,7 +40,7 @@ const students = [
   },
   {
     "id": 4,
-    "firstname": "Hawkins",
+    "firstName": "Hawkins",
     "lastName": "Everett",
     "age": 24,
     "eyeColor": "blue",
