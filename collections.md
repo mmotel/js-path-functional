@@ -1,6 +1,6 @@
 # Operacje na kolekcjach
 
-W ES5 mamy jeden typ reprezentujący kolekcje - `Array`. Razem z ES6`zyskaliśmy dwa kolejne`Set`oraz`Map\`. Programowanie funkcyjne znacznie ułatwia operowanie na nich.
+W ES5 mamy jeden typ reprezentujący kolekcje - `Array`. Razem z ES6 zyskaliśmy dwa kolejne `Set`oraz`Map`. Programowanie funkcyjne znacznie ułatwia operowanie na nich.
 
 W przykładach będziemy korzystali z tablicy `students`.
 
