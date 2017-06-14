@@ -45,3 +45,12 @@ Observable.of()
 ```js
 Observable.create()
 ```
+
+---
+
+###### Źródła
+
+* http://reactivex.io/learnrx/
+* https://xgrommx.github.io/rx-book/why_rx.html
+* http://reactivex.io/documentation/observable.html
+* [https://medium.com/@benlesh/learning-observable-by-building-observable](https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87)
