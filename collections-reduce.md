@@ -122,7 +122,7 @@ console.log(adultsNames);
 ```
 
 ##### [Przykład 2.3.8](https://codepen.io/mmotel/pen/owYBRJ)
-```
+```js
 let adultsNames = students
   .filter(student => student.age >= 21)
   .map(student => `${student.firstName} ${student.lastName}`)
