@@ -81,6 +81,14 @@ const students = [
 ];
 ```
 
+Pomocnicza funkcja do wyświetlania naszej tablicy studentów.
+
+```js
+function log (students) {
+  students.forEach(student => student.log());
+}
+```
+
 ## Iteracja
 
 Podstawową operacją na kolekcji jest iteracja. Najprostszym sposobem jest pęta `for-of`.
