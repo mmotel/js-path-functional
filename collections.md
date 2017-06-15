@@ -85,26 +85,45 @@ const students = [
 
 Podstawową operacją na kolekcji jest iteracja. Najprostszym sposobem jest pęta `for-of`.
 
+##### [Przykład 2.1](https://codepen.io/mmotel/pen/pwNJXo)
 ```js
 for(let student of students) {
   student.log();
 }
+// -> (0) Christina Richmond
+// -> (1) Austin Wooten
+// -> (2) Viola Shelton
+// -> (3) Marisol Sargent
+// -> (4) Hawkins Everett
 ```
 
 Korzystając z metody `Array.forEach()` możemy skupić się na tym co chcemy zrobić z elementami tablicy, a nie na tym jak po niej iterować.
 
+##### [Przykład 2.2](https://codepen.io/mmotel/pen/ZyBbqy)
 ```js
 students.forEach(student => {
   student.log();
 });
+// -> (0) Christina Richmond
+// -> (1) Austin Wooten
+// -> (2) Viola Shelton
+// -> (3) Marisol Sargent
+// -> (4) Hawkins Everett
 ```
 
 Metoda `Array.forEach()` przekazuje do funkcji obsługującej trzy parametry: element tablicy, jego indeks oraz całą tablicę.
 
+##### [Przykład 2.3](https://codepen.io/mmotel/pen/NgbGEx)
 ```js
 students.forEach( (student, index, students) => {
   console.log(`Student ${index+1}/${students.length}: ${student}`);
 });
+// -> Student 1/5: (0) Christina Richmond
+// -> Student 2/5: (1) Austin Wooten
+// -> Student 3/5: (2) Viola Shelton
+// -> Student 4/5: (3) Marisol Sargent
+// -> Student 5/5: (4) Hawkins Everett
+
 ```
 
 ---
