@@ -89,3 +89,9 @@ console.log(namesWithN);
 ```
 
 task 
+
+---
+
+##### Źródła
+
+* https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/Filter

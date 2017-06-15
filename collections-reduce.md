@@ -137,6 +137,39 @@ task
 
 .map() implementation
 
+##### [Przykład 2.3.9](https://codepen.io/mmotel/pen/OgbpmX)
+```js
+function map (array, mapper) {
+  return array
+    .reduce((acc, item) => acc.concat([mapper(item)]), []);
+}
+
+let studentAges = map(students, student => student.age);
+
+console.log(studentAges);
+```
+
 .filter() implementation
 
+##### [Przykład 2.3.10](https://codepen.io/mmotel/pen/vZyxeE)
+```
+function filter (array, condition) {
+  return array.reduce(
+    (acc, item) => condition(item) ? acc.concat([item]) : acc, 
+    []
+  );
+}
 
+let adultStudents = filter(students, student => student.age >= 21);
+
+log(adultStudents);
+// -> (1) Austin Wooten
+// -> (3) Marisol Sargent
+// -> (4) Hawkins Everett
+```
+
+---
+
+##### Źródła
+
+* https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/Reduce
