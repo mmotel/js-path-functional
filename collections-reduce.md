@@ -147,12 +147,13 @@ function map (array, mapper) {
 let studentAges = map(students, student => student.age);
 
 console.log(studentAges);
+// -> [19, 21, 20, 26, 24]
 ```
 
 .filter() implementation
 
 ##### [Przykład 2.3.10](https://codepen.io/mmotel/pen/vZyxeE)
-```
+```js
 function filter (array, condition) {
   return array.reduce(
     (acc, item) => condition(item) ? acc.concat([item]) : acc, 
