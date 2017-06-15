@@ -107,8 +107,30 @@ task
 
 .forEach() version
 
-2 -3 examples
+##### [Przykład 2.3.7](https://codepen.io/mmotel/pen/KqNaEa)
+```js
+let adultsNames = '';
 
+students.forEach(student => {
+  if (student.age >= 21) {
+    adultsNames += `${student.firstName} ${student.lastName}, `;
+  }
+});
+
+console.log(adultsNames);
+// -> 'Austin Wooten, Marisol Sargent, Hawkins Everett, '
+```
+
+##### [Przykład 2.3.8](https://codepen.io/mmotel/pen/owYBRJ)
+```
+let adultsNames = students
+  .filter(student => student.age >= 21)
+  .map(student => `${student.firstName} ${student.lastName}`)
+  .reduce((acc, name) => acc ? `${acc}, ${name}` : name, '');
+
+console.log(adultsNames);
+// -> 'Austin Wooten, Marisol Sargent, Hawkins Everett'
+```
 task
 
 ## .reduce() tricks
