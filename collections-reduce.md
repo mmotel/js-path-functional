@@ -63,10 +63,43 @@ task
 
 ## combine .map() and .reduce()
 
-
 .forEach() version
 
-2-3 examples
+##### [Przykład 2.3.5](https://codepen.io/mmotel/pen/OgbWze)
+```js
+let allClasses = [];
+
+students.forEach(student => {
+  student.classes.forEach(c => {
+    allClasses.push(c);
+  });
+});
+
+console.log(allClasses);
+// -> ["1A", "Art", "1B", "Science", "1A", "Science", 
+//     "1B", "Music", "1B", "Art", "Music"]
+
+let uniqueClasses = new Set(allClasses);
+
+console.log(uniqueClasses);
+// -> Set {"1A", "Art", "1B", "Science", "Music"}
+```
+
+##### [Przykład 2.3.6](https://codepen.io/mmotel/pen/MobJXp)
+```js
+let allClasses = students
+  .map(student => student.classes)
+  .reduce((acc, classes) => acc.concat(classes), []);
+
+console.log(allClasses);
+// -> ["1A", "Art", "1B", "Science", "1A", "Science", 
+//     "1B", "Music", "1B", "Art", "Music"] 
+
+let uniqueClasses = new Set(allClasses);
+
+console.log(uniqueClasses);
+// -> Set {"1A", "Art", "1B", "Science", "Music"}
+```
 
 task
 
