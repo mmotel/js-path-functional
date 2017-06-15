@@ -2,20 +2,47 @@
 
 W ES5 mamy jeden typ reprezentujący kolekcje - `Array`. Razem z ES6 zyskaliśmy dwa kolejne `Set`oraz`Map`. Programowanie funkcyjne znacznie ułatwia operowanie na nich.
 
-W przykładach będziemy korzystali z tablicy `students`.
+W przykładach będziemy korzystali z tablicy `students`, przechowującej instanceje klasy `Student`.
+
+```js
+class Student {
+  constructor ({id, firstName, lastName, age, eyeColor,
+                isActive, classes}) {
+    this.id = id,
+    this.firstName = firstName,
+    this.lastName= lastName,
+    this.age = age,
+    this.eyeColor = eyeColor,
+    this.isActive = isActive,
+    this.classes = classes
+  }
+  
+  toString () {
+    return `(${this.id}) ${this.firstName} ${this.lastName}`;
+  }
+  
+  log (...fields) {
+    console.log(`${this}${this.logFields(fields)}`);
+  }
+  
+  logFields (fields) {} // -> field=value...
+}
+```
+
+Tak wyglądają dane naszych studentów.
 
 ```js
 const students = [
-  {
+  new Student({
     "id": 0,
     "firstName": "Christina",
-    "lastname": "Richmond",
+    "lastName": "Richmond",
     "age": 19,
     "eyeColor": "green",
     "isActive": true,
     "classes": ["1A", "Art"]
-  },
-  {
+  }),
+  new Student({
     "id": 1,
     "firstName": "Austin",
     "lastName": "Wooten",
@@ -23,8 +50,8 @@ const students = [
     "eyeColor": "blue",
     "isActive": false,
     "classes": ["1B", "Science"]
-  },
-  {
+  }),
+  new Student({
     "id": 2,
     "firstName": "Viola",
     "lastName": "Shelton",
@@ -32,8 +59,8 @@ const students = [
     "eyeColor": "blue",
     "isActive": true,
     "classes": ["1A", "Science"]
-  },
-  {
+  }),
+  new Student({
     "id": 3,
     "firstName": "Marisol",
     "lastName": "Sargent",
@@ -41,8 +68,8 @@ const students = [
     "eyeColor": "brown",
     "isActive": false,
     "classes": ["1B", "Music"]
-  },
-  {
+  }),
+  new Student({
     "id": 4,
     "firstName": "Hawkins",
     "lastName": "Everett",
@@ -50,7 +77,7 @@ const students = [
     "eyeColor": "blue",
     "isActive": false,
     "classes": ["1B", "Art", "Music"]
-  }
+  })
 ];
 ```
 
