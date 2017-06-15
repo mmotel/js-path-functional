@@ -12,7 +12,8 @@ const students = [
     "lastname": "Richmond",
     "age": 19,
     "eyeColor": "green",
-    "isActive": true
+    "isActive": true,
+    "classes": ["1A", "Art"]
   },
   {
     "id": 1,
@@ -20,7 +21,8 @@ const students = [
     "lastName": "Wooten",
     "age": 21,
     "eyeColor": "blue",
-    "isActive": false
+    "isActive": false,
+    "classes": ["1B", "Science"]
   },
   {
     "id": 2,
@@ -28,7 +30,8 @@ const students = [
     "lastName": "Shelton",
     "age": 20,
     "eyeColor": "blue",
-    "isActive": true
+    "isActive": true,
+    "classes": ["1A", "Science"]
   },
   {
     "id": 3,
@@ -36,7 +39,8 @@ const students = [
     "lastName": "Sargent",
     "age": 26,
     "eyeColor": "brown",
-    "isActive": false
+    "isActive": false,
+    "classes": ["1B", "Music"]
   },
   {
     "id": 4,
@@ -44,7 +48,8 @@ const students = [
     "lastName": "Everett",
     "age": 24,
     "eyeColor": "blue",
-    "isActive": false
+    "isActive": false,
+    "classes": ["1B", "Art", "Music"]
   }
 ];
 ```
