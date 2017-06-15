@@ -2,7 +2,7 @@
 
 W ES5 mamy jeden typ reprezentujący kolekcje - `Array`. Razem z ES6 zyskaliśmy dwa kolejne `Set`oraz`Map`. Programowanie funkcyjne znacznie ułatwia operowanie na nich.
 
-W przykładach będziemy korzystali z tablicy `students`, przechowującej instanceje klasy `Student`.
+W przykładach będziemy korzystali z tablicy [`students`](https://codepen.io/mmotel/pen/rwWVge), przechowującej instanceje klasy `Student`.
 
 ```js
 class Student {
@@ -83,20 +83,11 @@ const students = [
 
 ## Iteracja
 
-Podstawową operacją na kolekcji jest wykonanie na niej iteracji.
+Podstawową operacją na kolekcji jest iteracja. Najprostszym sposobem jest pęta `for-of`.
 
 ```js
-for(let i = 0; i < students.length; i += 1) {
-  console.log(students[i]);
-}
-```
-
-Można nieco usprawnić ciało pętli tworząc zmienną `student`, która przechowuje element tablicy, który nas aktualnie interesuje.
-
-```js
-for(let i = 0; i < students.length; i += 1) {
-  let student = students[i];
-  console.log(student);
+for(let student of students) {
+  student.log();
 }
 ```
 
@@ -104,7 +95,7 @@ Korzystając z metody `Array.forEach()` możemy skupić się na tym co chcemy zr
 
 ```js
 students.forEach(student => {
-  console.log(student);
+  student.log();
 });
 ```
 
@@ -112,7 +103,7 @@ Metoda `Array.forEach()` przekazuje do funkcji obsługującej trzy parametry: el
 
 ```js
 students.forEach( (student, index, students) => {
-  console.log(student, index, students);
+  console.log(`Student ${index+1}/${students.length}: ${student}`);
 });
 ```
 
