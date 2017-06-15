@@ -60,10 +60,32 @@ task
 
 ## combine .map() and .filter()
 
-imperative
-
 .forEach() version
 
-2-3 examples
+##### [Przykład 2.2.5](https://codepen.io/mmotel/pen/XgNKpM)
+```js
+let namesWithN = [];
+    
+students.forEach(student => {
+  let name = student.firstName;
+  if (name.toLowerCase().indexOf('n') > 0) {
+    namesWithN.push(name);
+  }
+});
+
+console.log(namesWithN);
+// -> ["Christina", "Austin", "Hawkins"]
+```
+
+
+##### [Przykład 2.2.6](https://codepen.io/mmotel/pen/GENqqw)
+```js
+let namesWithN = students
+  .map(student => student.firstName)
+  .filter(name => name.toLowerCase().indexOf('n') > 0);
+
+console.log(namesWithN);
+// -> ["Christina", "Austin", "Hawkins"]
+```
 
 task 
