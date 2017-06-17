@@ -41,6 +41,23 @@ console.log(areAllStudentsActive);
 
 ## `some()`
 
+##### [Przykład 2.4.5](https://codepen.io/mmotel/pen/awpqmg)
+```js
+let hasSomeoneByeEyes = students
+    .filter(student => student.eyeColor === 'blue')
+    .length > 0;
+
+console.log(hasSomeoneByeEyes);
+```
+
+##### [Przykład 2.4.6](https://codepen.io/mmotel/pen/mwRXRO)
+```js
+let hasSomeoneByeEyes = 
+    students.some(student => student.eyeColor === 'blue');
+
+console.log(hasSomeoneByeEyes);
+```
+
 ---
 
 ###### Źródła
