@@ -10,7 +10,8 @@ const id = 3;
 const foundStudent = 
     students.filter(student => student.id === id)[0];
 
-console.log(foundStudent);
+foundStudent.log(); 
+// -> (3) Marisol Sargent
 ```
 
 ##### [Przykład 2.4.2](https://codepen.io/mmotel/pen/mwRXdP)
@@ -18,7 +19,8 @@ console.log(foundStudent);
 const id = 3;
 const foundStudent = students.find(student => student.id === id);
 
-console.log(foundStudent);
+foundStudent.log(); 
+// -> (3) Marisol Sargent
 ```
 
 ## `every()`
@@ -28,7 +30,7 @@ console.log(foundStudent);
 let areAllStudentsActive = 
     students.reduce((acc, student) => acc && student.isActive, true);
 
-console.log(areAllStudentsActive);
+console.log(areAllStudentsActive); // -> false
 ```
 
 ##### [Przykład 2.4.4](https://codepen.io/mmotel/pen/KqaQpo)
@@ -36,7 +38,7 @@ console.log(areAllStudentsActive);
 let areAllStudentsActive = 
     students.every(student => student.isActive);
 
-console.log(areAllStudentsActive);
+console.log(areAllStudentsActive); // -> false
 ```
 
 ## `some()`
@@ -47,7 +49,7 @@ let hasSomeoneByeEyes = students
     .filter(student => student.eyeColor === 'blue')
     .length > 0;
 
-console.log(hasSomeoneByeEyes);
+console.log(hasSomeoneByeEyes); // -> false
 ```
 
 ##### [Przykład 2.4.6](https://codepen.io/mmotel/pen/mwRXRO)
@@ -55,7 +57,7 @@ console.log(hasSomeoneByeEyes);
 let hasSomeoneByeEyes = 
     students.some(student => student.eyeColor === 'blue');
 
-console.log(hasSomeoneByeEyes);
+console.log(hasSomeoneByeEyes); // -> false
 ```
 
 ---
