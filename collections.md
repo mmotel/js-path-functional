@@ -21,11 +21,9 @@ class Student {
     return `(${this.id}) ${this.firstName} ${this.lastName}`;
   }
   
-  log (...fields) {
-    console.log(`${this}${this.logFields(fields)}`);
+  log () {
+    console.log(this.toString());
   }
-  
-  logFields (fields) {} // -> field=value...
 }
 ```
 
