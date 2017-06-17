@@ -1,8 +1,9 @@
 # Operacje na kolekcjach - `reduce()`
 
-.forEach() version
+.forEach\(\) version
 
 ##### [Przykład 2.3.1](https://codepen.io/mmotel/pen/YQppNZ)
+
 ```js
 let sumOfAges = 0;
 
@@ -14,6 +15,7 @@ console.log(sumOfAges); // -> 110
 ```
 
 ##### [Przykład 2.3.2](https://codepen.io/mmotel/pen/KqNNmJ)
+
 ```js
 let sumOfAges = students
   .reduce((acc, student) => acc += student.age, 0);
@@ -21,10 +23,11 @@ let sumOfAges = students
 console.log(sumOfAges);
 ```
 
-2-3 examples
+2-3 examples  
 finding max/min value
 
 ##### [Przykład 2.3.3](https://codepen.io/mmotel/pen/YQppEQ)
+
 ```js
 let maxAge = students
   .reduce(
@@ -59,13 +62,14 @@ console.log(studentsDict);
 // }
 ```
 
-task 
+task
 
-## combine .map() and .reduce()
+## combine .map\(\) and .reduce\(\)
 
-.forEach() version
+.forEach\(\) version
 
 ##### [Przykład 2.3.5](https://codepen.io/mmotel/pen/OgbWze)
+
 ```js
 let allClasses = [];
 
@@ -86,6 +90,7 @@ console.log(uniqueClasses);
 ```
 
 ##### [Przykład 2.3.6](https://codepen.io/mmotel/pen/MobJXp)
+
 ```js
 let allClasses = students
   .map(student => student.classes)
@@ -103,11 +108,12 @@ console.log(uniqueClasses);
 
 task
 
-## combine .map() .reduce() and .filter()
+## combine .map\(\) .reduce\(\) and .filter\(\)
 
-.forEach() version
+.forEach\(\) version
 
 ##### [Przykład 2.3.7](https://codepen.io/mmotel/pen/KqNaEa)
+
 ```js
 let adultsNames = '';
 
@@ -122,6 +128,7 @@ console.log(adultsNames);
 ```
 
 ##### [Przykład 2.3.8](https://codepen.io/mmotel/pen/owYBRJ)
+
 ```js
 let adultsNames = students
   .filter(student => student.age >= 21)
@@ -131,13 +138,15 @@ let adultsNames = students
 console.log(adultsNames);
 // -> 'Austin Wooten, Marisol Sargent, Hawkins Everett'
 ```
+
 task
 
-## .reduce() tricks
+## .reduce\(\) tricks
 
-.map() implementation
+.map\(\) implementation
 
 ##### [Przykład 2.3.9](https://codepen.io/mmotel/pen/OgbpmX)
+
 ```js
 function map (array, mapper) {
   return array
@@ -150,9 +159,10 @@ console.log(studentAges);
 // -> [19, 21, 20, 26, 24]
 ```
 
-.filter() implementation
+.filter\(\) implementation
 
 ##### [Przykład 2.3.10](https://codepen.io/mmotel/pen/vZyxeE)
+
 ```js
 function filter (array, condition) {
   return array.reduce(
@@ -173,4 +183,7 @@ log(adultStudents);
 
 ##### Źródła
 
-* https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/Reduce
+* [https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/Reduce](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/Reduce)
+
+
+
