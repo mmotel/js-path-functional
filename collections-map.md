@@ -67,7 +67,7 @@ console.log(uniqueEyeColors);
 
 ### Ćwiczenia
 
-(2.1.1) 
+(2.1.1) Wyciągnij z tablicy studentów uniklane wartości ich wieku.
 
 ---
 
