@@ -18,7 +18,7 @@ students.forEach(student => {
 console.log(sumOfAges); // -> 110
 ```
 
-Uzyskaliśmy uproszczoną implementację metody `Array.reduce()`. Jako parametr przyjmuje ona funckję, do której przekazuje `akumulator` oraz kolejne wartości tablicy.
+Uzyskaliśmy uproszczoną implementację metody `Array.reduce()`. Jako parametr przyjmuje ona funckję, do której przekazuje `akumulator` oraz kolejne wartości tablicy. Drugim opcjonalnym parametrem metody `Array.reduce()` jest wartość początkowa `akumulatora`.
 
 ##### [Przykład 2.3.2](https://codepen.io/mmotel/pen/KqNNmJ)
 
