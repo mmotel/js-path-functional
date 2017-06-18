@@ -6,14 +6,16 @@ W JavaScript wszystko jest obiektem, również funkcja. A dokładniej funkcje s�
 
 Możemy przypisać funkcję do zmiennej.
 
+##### [Przykład 1.1](https://codepen.io/mmotel/pen/awpxYj)
 ```js
-var greet = function (name) {
+let greet = function (name) {
     return `Hello, my name is ${name}.`;
 }
 ```
 
 Możemy przekazać funkcję jako parametr do innej funkcji.
 
+##### [Przykład 1.2](https://codepen.io/mmotel/pen/XgpQqq)
 ```js
 const name = 'John Doe';
 
@@ -24,6 +26,7 @@ function greeter (greet) {
 
 Możemy również zwrócić funkcję jako wynik innej funkcji.
 
+##### [Przykład 1.3](https://codepen.io/mmotel/pen/WORWyR)
 ```js
 function createGreeter () {
     return function (name) {
