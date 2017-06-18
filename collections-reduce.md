@@ -1,6 +1,10 @@
 # Operacje na kolekcjach - `reduce()`
 
-.forEach\(\) version
+Redukcja pozwala na akumulację wartości z tablicy do pojedynczego obiektu.
+
+Obliczmy sumę wieku studentów.
+
+Ponownie zaczniemy od wykorzystania metody `Array.forEach()`.
 
 ##### [Przykład 2.3.1](https://codepen.io/mmotel/pen/YQppNZ)
 
@@ -14,6 +18,8 @@ students.forEach(student => {
 console.log(sumOfAges); // -> 110
 ```
 
+Uzyskaliśmy uproszczoną implementację metody `Array.reduce()`. Jako parametr przyjmuje ona funckję, do której przekazuje `akumulator` oraz kolejne wartości tablicy.
+
 ##### [Przykład 2.3.2](https://codepen.io/mmotel/pen/KqNNmJ)
 
 ```js
@@ -23,8 +29,7 @@ let sumOfAges = students
 console.log(sumOfAges);
 ```
 
-2-3 examples  
-finding max/min value
+Wykorzystując metodę `Array.reduce()` możemy łatwo odnaleźć najwyższą wartość wieku studentów.
 
 ##### [Przykład 2.3.3](https://codepen.io/mmotel/pen/YQppEQ)
 
@@ -38,7 +43,7 @@ let maxAge = students
 console.log(maxAge); // -> 26
 ```
 
-converting array to object
+Możemy również przekształcić tablicę w obiekt pełniący rolę słownika. 
 
 ##### [Przykład 2.3.4](https://codepen.io/mmotel/pen/OgbbvE)
 
@@ -62,11 +67,12 @@ console.log(studentsDict);
 // }
 ```
 
-task
 
-## combine .map\(\) and .reduce\(\)
+## Połączenie mapowania oraz redukowania
 
-.forEach\(\) version
+Operacja `map-reduce` jest popularna w świenie baz danych, np. `Mongo`. Dzięki metodom `Array.map()` oraz `Array.reduce()` możemy ją wykonać na tablicy studentów.
+
+Wyciągnijmy z listy studentów listę klas do których uczęszczają.
 
 ##### [Przykład 2.3.5](https://codepen.io/mmotel/pen/OgbWze)
 
@@ -178,6 +184,14 @@ log(adultStudents);
 // -> (3) Marisol Sargent
 // -> (4) Hawkins Everett
 ```
+
+---
+
+### Ćwiczenia
+
+(2.3.1) Wyciągnij z listy studentów napis zawierający ich imiona oraz nazwiska oddzielone przecinkami.
+
+(2.3.2) 
 
 ---
 
