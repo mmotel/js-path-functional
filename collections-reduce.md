@@ -74,6 +74,8 @@ Operacja `map-reduce` jest popularna w świenie baz danych, np. `Mongo`. Dzięki
 
 Wyciągnijmy z listy studentów listę klas do których uczęszczają.
 
+Rozpoczniemy od wersji z wykorzystaniem `Array.forEach()`.
+
 ##### [Przykład 2.3.5](https://codepen.io/mmotel/pen/OgbWze)
 
 ```js
@@ -95,6 +97,8 @@ console.log(uniqueClasses);
 // -> Set {"1A", "Art", "1B", "Science", "Music"}
 ```
 
+O wiele prościej będzie wykorzystać `Array.map()` oraz `Array.reduce()`.
+
 ##### [Przykład 2.3.6](https://codepen.io/mmotel/pen/MobJXp)
 
 ```js
@@ -112,11 +116,13 @@ console.log(uniqueClasses);
 // -> Set {"1A", "Art", "1B", "Science", "Music"}
 ```
 
-task
+## Połączenie mapowania, filtrowania oraz redukowania
 
-## combine .map\(\) .reduce\(\) and .filter\(\)
+Możemy również wykorzystać wszystkie trzy metody - `Array.map()`, `Array.filter()` oraz `Array.reduce()` - jednocześnie wykorzystując tym samym pełną moc jaką daje nam przetwarzanie potokowe.
 
-.forEach\(\) version
+Wyciągnijmy z tablicy studentów napis zawierający imiona i nazwiska dorosłych studentów.
+
+Implementacja z wykorzystaniem `Array.forEach()` nie jest zbyt skomplikowana.
 
 ##### [Przykład 2.3.7](https://codepen.io/mmotel/pen/KqNaEa)
 
@@ -133,6 +139,8 @@ console.log(adultsNames);
 // -> 'Austin Wooten, Marisol Sargent, Hawkins Everett, '
 ```
 
+Jednak wersja z `Array.map()`, `Array.filter()` oraz `Array.reduce()` jest znacznie łatwiejsza w utrzymaniu.
+
 ##### [Przykład 2.3.8](https://codepen.io/mmotel/pen/owYBRJ)
 
 ```js
@@ -145,11 +153,11 @@ console.log(adultsNames);
 // -> 'Austin Wooten, Marisol Sargent, Hawkins Everett'
 ```
 
-task
+## Uniwersalność redukcji
 
-## .reduce\(\) tricks
+`Array.reduce()` pozwala na implementację dowolnej innej metody operującej na tablicach, w tym również `Array.map()` czy `Array.filter()`.
 
-.map\(\) implementation
+Zaimplementujmy mapowanie poprzez redukcję.
 
 ##### [Przykład 2.3.9](https://codepen.io/mmotel/pen/OgbpmX)
 
@@ -165,7 +173,7 @@ console.log(studentAges);
 // -> [19, 21, 20, 26, 24]
 ```
 
-.filter\(\) implementation
+Analogicznie możemy zaimplementować filtrowanie.
 
 ##### [Przykład 2.3.10](https://codepen.io/mmotel/pen/vZyxeE)
 
@@ -191,7 +199,7 @@ log(adultStudents);
 
 (2.3.1) Wyciągnij z listy studentów napis zawierający ich imiona oraz nazwiska oddzielone przecinkami.
 
-(2.3.2) 
+(2.3.2) // todo map-reduce
 
 ---
 
