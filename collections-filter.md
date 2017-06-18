@@ -1,6 +1,10 @@
 # Operacje na kolekcjach - `filter()`
 
-imperative
+Filtorwanie pozwala wyciągnąć z tablicy te wartości, które spełniają zadany warunek.
+
+Wyciągnijmy z listy studentów tych, którzy są aktywni.
+
+Zaczniemy od wykorzystania pętli `for-of`.
 
 ##### [Przykład 2.2.1](https://codepen.io/mmotel/pen/NgbNpL)
 ```js
@@ -17,7 +21,7 @@ console.log(activeStudents);
 // -> (2) Viola Shelton
 ```
 
-.forEach() version
+Ponownie uprościmy implementację wykorzystując metodę `Array.forEach()`.
 
 ##### [Przykład 2.2.2](https://codepen.io/mmotel/pen/MobyQN)
 ```js
@@ -34,7 +38,7 @@ log(activeStudents);
 // -> (2) Viola Shelton
 ```
 
-2-3 examples
+Uzyskaliśmy uproszczoną implementację metody `Array.filter()`. Przyjmuje ona jako parametr funckję, która sprawdza czy element spełnia zadany warunek.
 
 ##### [Przykład 2.2.3](https://codepen.io/mmotel/pen/YQpqLr)
 ```js
@@ -44,6 +48,10 @@ log(activeStudents);
 // -> (0) Christina Richmond
 // -> (2) Viola Shelton
 ```
+
+Możemy również zagnieżdżać filtrowanie aby uzyskać nieco bardziej skomplikowane zapytania.
+
+Wyciągnijmy z listy studentów tych, którzy uczęszczają do klasy `1B`.
 
 ##### [Przykład 2.2.4](https://codepen.io/mmotel/pen/qjqZKR)
 ```js
@@ -56,11 +64,13 @@ log(studentsFrom1B);
 // -> (4) Hawkins Everett
 ```
 
-task
+## Połączenie mapowania oraz filtrowania
 
-## combine .map() and .filter()
+Bardzo często przydaje się połączenie metod `Array.map()` oraz `Array.filter()`.
 
-.forEach() version
+Wyciągnijmy z tablicy studentów imiona, które zawierają w sobie literę `n`.
+
+Możemy to zrobić korzystając z metody `Array.forEach()`.
 
 ##### [Przykład 2.2.5](https://codepen.io/mmotel/pen/XgNKpM)
 ```js
@@ -77,6 +87,7 @@ console.log(namesWithN);
 // -> ["Christina", "Austin", "Hawkins"]
 ```
 
+Jednak o wiele lepiej będzie skorzystać z metod `Array.map()` i `Array.filter()`.
 
 ##### [Przykład 2.2.6](https://codepen.io/mmotel/pen/GENqqw)
 ```js
@@ -89,6 +100,14 @@ console.log(namesWithN);
 ```
 
 task 
+
+---
+
+### Ćwiczenia
+
+(2.2.1) Wyciągnij z listy studentów tych, którzy są dorośli. Przyjmij, że dorosłym jest student, który ma conajmniej 21 lat.
+
+(2.2.2) Wykorzsytując kod z ćwiczenia 2.2.1 wyciągnij z listy studentów imiona i nazwiska dorosłych studentów.
 
 ---
 
