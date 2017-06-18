@@ -1,6 +1,10 @@
 # Operacje na kolekcjach - `map()`
 
-imperative
+Mapowanie pozwala przekształcić tablicę wartości na tablicę innych wartości.
+
+Przekształćmy tablicę studentów na tablicę ich imion oraz nazwisk.
+
+Zaczniemy od wykorzystania pętli `for-of`.
 
 ##### [Przykład 2.1.1](https://codepen.io/mmotel/pen/mwOeoN)
 ```js
@@ -15,7 +19,7 @@ console.log(names);
 //     "Viola Shelton", "Marisol Sargent", "Hawkins Everett"]
 ```
 
-.forEach() version
+Możemy uprościć implementację wykorzystując metodę `Array.forEach()`.
 
 ##### [Przykład 2.1.2](https://codepen.io/mmotel/pen/VWmeEv)
 ```js
@@ -30,7 +34,7 @@ console.log(names);
 //     "Viola Shelton", "Marisol Sargent", "Hawkins Everett"]
 ```
 
-2 examples
+To co udało nam się osiągnąć jest uproszczoną iplementacją metody `Array.map()`. Przyjmuje ona jako argument funckję, która wykona mapowanie wartości.
 
 ##### [Przykład 2.1.3](https://codepen.io/mmotel/pen/rwWxQP)
 ```js
@@ -41,6 +45,10 @@ console.log(names);
 // -> ["Christina Richmond", "Austin Wooten", 
 //     "Viola Shelton", "Marisol Sargent", "Hawkins Everett"]
 ```
+
+Korzystając z `Array.map()` oraz zbiorów (`Set`) możemy łatwo i szybko wyciągnąć z tablicy zbiór występujących wartości danego pola.
+
+Wyciągnijmy zbiór kolorów oczy studentów.
 
 ##### [Przykład 2.1.4](https://codepen.io/mmotel/pen/pwNgBO)
 ```js
@@ -55,7 +63,11 @@ console.log(uniqueEyeColors);
 // -> Set {"green", "blue", "brown"}
 ```
 
-task 
+---
+
+### Ćwiczenia
+
+(2.1.1) 
 
 ---
 
