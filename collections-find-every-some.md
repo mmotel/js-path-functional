@@ -2,6 +2,15 @@
 
 nowe metody `Array.prototype` z ES6
 
+Wraz z `ECMAScript 6` obiekt `Array` zyskał nowe metody:
+
+* `Array.find()` - pozwala wyszukać pojedynczy element tablicy,
+
+* `Array.every()` - sprawdza czy każdy element tablicy spełnia zadany warunek,
+
+* `Array.some()` - sprawdza czy conajmniej jeden element tablicy spełnia zadany warunek.
+
+
 ## `find()`
 
 ##### [Przykład 2.4.1](https://codepen.io/mmotel/pen/BZpJXW)
