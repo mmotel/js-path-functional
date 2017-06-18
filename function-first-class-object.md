@@ -1,17 +1,35 @@
-# Funkcja - obiekt pierwszej klasy
+# Funkcja - _obywatel_ pierwszej klasy
 
-JS is objective-functional langauge
+JavaScript jest językiem obiektowo-funkcyjnym. Jego twórca, Brendan Eich, miał za zadanie stworzyć język, w którym będą `Scheme` w przedlądarce oraz będzie wyglądał jak `Java`. 
 
-Brendan Eich about why JS i obj-func
+W JavaScript wszystko jest obiektem, również funkcja. A dokładniej funkcje w JavaScript są "obywatelami" pierwszej klasy. Oznacza to, że możemy z nimi zrobić dokładnie to samo co z innymi obketami.
 
-```js
-var f = function () {}
-```
+Możemy przypisać funkcję do zmiennej.
 
 ```js
-function (function () {}) {}
+var greet = function (name) {
+    return `Hello, my name is ${name}.`;
+}
 ```
 
+Możemy przekazać funkcję jako parametr do innej funkcji.
+
 ```js
-return function () {}
+const name = 'John Doe';
+
+function greeter (greet) {
+    console.log(greet(name));
+}
 ```
+
+Możemy również zwrócić funkcję jako wynik innej funkcji.
+
+```js
+function createGreeter () {
+    return function (name) {
+        return `Hello, my name is ${name}.`;
+    }
+}
+```
+
+
