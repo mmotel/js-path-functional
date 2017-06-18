@@ -32,4 +32,21 @@ function createGreeter () {
 }
 ```
 
+## Czego brakuje w JavaScript?
 
+Jednak JavaScript nie jest w pełni językiem funkcyjnym. Brakuje mu kliku ważnych elementów.
+
+* czystych funkcji - _pure functions_ - czyli funkcji bez efektów ubocznych, np. `console.log()`,
+
+* niezmiennego stanu - możemy wykorzystać  `const` czy też `Object.freez` ,
+
+* _tail call optimization_ - JavaScript wspiera rekursję ale nie obsługuje poprawnie optymalizacji rekursji.
+
+## O czym będziemy mówić
+
+Będziemy mówili o tym jak wykorzystać elementy programowania funkcyjnego aby nasz kod w JavaScript stał się bardziej czytelny oraz reużywalny.
+
+Przyjrzymy się:
+
+* przetwarzaniu potokowym na przykładzie kolekcji,
+* programowaniu reaktywnym na przykładzie `RxJS` i `Observables`.
