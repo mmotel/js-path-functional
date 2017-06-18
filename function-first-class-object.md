@@ -1,8 +1,8 @@
 # Funkcja - _obywatel_ pierwszej klasy
 
-JavaScript jest językiem obiektowo-funkcyjnym. Jego twórca, Brendan Eich, miał za zadanie stworzyć język, w którym będą `Scheme` w przedlądarce oraz będzie wyglądał jak `Java`. 
+JavaScript jest językiem obiektowo-funkcyjnym. Jego twórca, Brendan Eich, miał za zadanie stworzyć język, który będzie `Scheme` w przedlądarce oraz będzie wyglądał jak `Java`. 
 
-W JavaScript wszystko jest obiektem, również funkcja. A dokładniej funkcje w JavaScript są "obywatelami" pierwszej klasy. Oznacza to, że możemy z nimi zrobić dokładnie to samo co z innymi obketami.
+W JavaScript wszystko jest obiektem, również funkcja. A dokładniej funkcje są "obywatelami" pierwszej klasy. Oznacza to, że możemy z nimi zrobić dokładnie to samo co z innymi obketami.
 
 Możemy przypisać funkcję do zmiennej.
 
