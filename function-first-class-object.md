@@ -1,4 +1,4 @@
-# Funkcja - _obywatel_ pierwszej klasy
+# Funkcja - obiekt pierwszej klasy
 
 JavaScript jest językiem obiektowo-funkcyjnym. Jego twórca, Brendan Eich, miał za zadanie stworzyć język, który będzie `Scheme` w przedlądarce oraz będzie wyglądał jak `Java`. 
 
