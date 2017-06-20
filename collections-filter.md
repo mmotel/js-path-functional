@@ -1,4 +1,4 @@
-# Operacje na kolekcjach - `filter()`
+# Operacje na kolekcjach - filtrowanie
 
 Filtorwanie pozwala wyciągnąć z tablicy te wartości, które spełniają zadany warunek.
 

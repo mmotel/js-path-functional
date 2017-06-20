@@ -43,7 +43,7 @@ function greet (name, age, city) {
   return `My name is ${name}, I am ${age} years old and from ${city}.`;
 }
 
-console.log( greet.length );
+console.log( greet.length ); // -> 3
 ```
 
 ## Czego brakuje w JavaScript?

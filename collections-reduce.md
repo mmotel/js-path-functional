@@ -1,4 +1,4 @@
-# Operacje na kolekcjach - `reduce()`
+# Operacje na kolekcjach - redukowania
 
 Redukcja pozwala na akumulację wartości z tablicy do pojedynczego obiektu.
 

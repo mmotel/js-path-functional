@@ -1,4 +1,4 @@
-# Operacje na kolekcjach - `find()`, `every()`, `some()`
+# Operacje na kolekcjach - nowe metody w ES6
 
 Wraz z `ECMAScript 6` obiekt `Array` zyskał nowe metody:
 

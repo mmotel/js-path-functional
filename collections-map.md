@@ -1,4 +1,4 @@
-# Operacje na kolekcjach - `map()`
+# Operacje na kolekcjach - mapowanie
 
 Mapowanie pozwala przekształcić tablicę wartości na tablicę innych wartości.
 
