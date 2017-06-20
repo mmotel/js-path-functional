@@ -1,11 +1,26 @@
 # RxJS i Observables
 
+interactive vs reactive programming
+
+everything is a stream
+
 MSFT libarary 
 reactive extensions
 
 ## observer - subscriber pattern
 
 ## Observables
+
+Observable
+    next error complete
+    
+    
+Observer
+
+Operators
+    map filter do merge retry
+    
+    
 
 what it is
 
