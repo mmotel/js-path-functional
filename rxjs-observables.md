@@ -24,6 +24,10 @@ Rx.Observable.from([1, 2, 3, 4])
    .subscribe(item => { 
       console.log(`item: ${item}`); 
    });
+// -> 'item: 1'
+// -> 'item: 2'
+// -> 'item: 3'
+// -> 'item: 4'
 ```
     
     
@@ -40,6 +44,11 @@ let observer = {
 
 Rx.Observable.from([1, 2, 3, 4])
    .subscribe(observer);
+// -> 'item: 1'
+// -> 'item: 2'
+// -> 'item: 3'
+// -> 'item: 4'
+// -> 'complete'
 ```
 
 Operators
@@ -50,6 +59,11 @@ Operators
 Rx.Observable.from([1, 2, 3, 4])
    .map(item => item * item)
    .subscribe(observer);
+// -> 'item: 1'
+// -> 'item: 4'
+// -> 'item: 9'
+// -> 'item: 16'
+// -> 'complete'
 ```
 
 ##### [Przykład 3.4](https://codepen.io/mmotel/pen/YQQorW)
@@ -57,6 +71,10 @@ Rx.Observable.from([1, 2, 3, 4])
 Rx.Observable.from([1, 2, 3, 4])
    .filter(item => item % 2 === 0)
    .subscribe(observer);
+// -> 'item: 2'
+// -> 'item: 4'
+// -> 'complete'
+
 ```
     
 ##### [Przykład 3.5](https://codepen.io/mmotel/pen/KqqjyB)
@@ -64,24 +82,20 @@ Rx.Observable.from([1, 2, 3, 4])
 Rx.Observable.from([1, 2, 3, 4])
    .do(item => { console.log(`do: ${item}`); })
    .subscribe(observer);
+// -> 'do: 1'
+// -> 'item: 1'
+// -> 'do: 2'
+// -> 'item: 2'
+// -> 'do: 3'
+// -> 'item: 3'
+// -> 'do: 4'
+// -> 'item: 4'
+// -> 'complete'
 ```
-    
-
-what it is
-
-how to use
 
 examples for asynchronous actions
 
 event handling
-
-```js
-.subscribe()
-```
-
-```js
-.map()
-```
 
 handling http requests
 
