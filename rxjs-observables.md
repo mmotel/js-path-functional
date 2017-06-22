@@ -44,10 +44,10 @@ let observer = {
 
 Rx.Observable.from([1, 2, 3, 4])
    .subscribe(observer);
-// -> 'item: 1'
-// -> 'item: 2'
-// -> 'item: 3'
-// -> 'item: 4'
+// -> 'next: 1'
+// -> 'next: 2'
+// -> 'next: 3'
+// -> 'next: 4'
 // -> 'complete'
 ```
 
@@ -59,10 +59,10 @@ Operators
 Rx.Observable.from([1, 2, 3, 4])
    .map(item => item * item)
    .subscribe(observer);
-// -> 'item: 1'
-// -> 'item: 4'
-// -> 'item: 9'
-// -> 'item: 16'
+// -> 'next: 1'
+// -> 'next: 4'
+// -> 'next: 9'
+// -> 'next: 16'
 // -> 'complete'
 ```
 
@@ -71,8 +71,8 @@ Rx.Observable.from([1, 2, 3, 4])
 Rx.Observable.from([1, 2, 3, 4])
    .filter(item => item % 2 === 0)
    .subscribe(observer);
-// -> 'item: 2'
-// -> 'item: 4'
+// -> 'next: 2'
+// -> 'next: 4'
 // -> 'complete'
 
 ```
@@ -83,13 +83,41 @@ Rx.Observable.from([1, 2, 3, 4])
    .do(item => { console.log(`do: ${item}`); })
    .subscribe(observer);
 // -> 'do: 1'
-// -> 'item: 1'
+// -> 'next: 1'
 // -> 'do: 2'
-// -> 'item: 2'
+// -> 'next: 2'
 // -> 'do: 3'
-// -> 'item: 3'
+// -> 'next: 3'
 // -> 'do: 4'
-// -> 'item: 4'
+// -> 'next: 4'
+// -> 'complete'
+```
+
+##### [Przykład 3.6](https://codepen.io/mmotel/pen/KqqjyB)
+```js
+let stream1$ = Rx.Observable.from([1, 2, 3, 4]);
+let stream2$ = Rx.Observable.from(['a', 'b', 'c']);
+
+stream1$
+   .merge(stream2$)
+   .subscribe(observer);
+// -> 'next: 1'
+// -> 'next: 2'
+// -> 'next: 3'
+// -> 'next: 4'
+// -> 'next: a'
+// -> 'next: b'
+// -> 'next: c'
+// -> 'complete'
+```
+
+##### [Przykład 3.7](https://codepen.io/mmotel/pen/dRRBwp)
+```js
+Rx.Observable.from([1, 2, 3, 4])
+   .take(2)
+   .subscribe(observer);
+// -> 'next: 1'
+// -> 'next: 2'
 // -> 'complete'
 ```
 
