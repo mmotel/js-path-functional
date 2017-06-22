@@ -123,6 +123,20 @@ Rx.Observable.from([1, 2, 3, 4])
 
 examples for asynchronous actions
 
+##### [Przykład 2.8](https://codepen.io/mmotel/pen/RggzzZ)
+```js
+Rx.Observable.fromEvent(window, 'mousemove')
+   .subscribe(observer);
+```
+
+##### [Przykład 2.9]()
+```js
+Rx.Observable.fromEvent(window, 'mousemove')
+   .map(event => ({x: event.clientX, y: event.clientY}))
+   .filter(position => position.x < 200 && position.y < 200)
+   .subscribe(observer);
+```
+
 event handling
 
 handling http requests
