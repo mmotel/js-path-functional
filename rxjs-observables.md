@@ -54,6 +54,7 @@ Rx.Observable.from([1, 2, 3, 4])
 Operators
     map filter do merge retry
     
+ map
 ##### [Przykład 3.3](https://codepen.io/mmotel/pen/jwwjwx)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -66,6 +67,7 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
+filter
 ##### [Przykład 3.4](https://codepen.io/mmotel/pen/YQQorW)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -77,6 +79,7 @@ Rx.Observable.from([1, 2, 3, 4])
 
 ```
     
+do
 ##### [Przykład 3.5](https://codepen.io/mmotel/pen/KqqjyB)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -93,6 +96,7 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
+merge
 ##### [Przykład 3.6](https://codepen.io/mmotel/pen/KqqjyB)
 ```js
 let stream1$ = Rx.Observable.from([1, 2, 3, 4]);
@@ -111,6 +115,7 @@ stream1$
 // -> 'complete'
 ```
 
+take
 ##### [Przykład 3.7](https://codepen.io/mmotel/pen/dRRBwp)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -122,7 +127,8 @@ Rx.Observable.from([1, 2, 3, 4])
 ```
 
 examples for asynchronous actions
-
+event handling
+fromEvent
 ##### [Przykład 2.8](https://codepen.io/mmotel/pen/RggzzZ)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
@@ -138,9 +144,7 @@ Rx.Observable.fromEvent(window, 'mousemove')
 ```
 
 event handling
-
-handling http requests
-
+catch
 ##### [Przykład 2.10](https://codepen.io/mmotel/pen/mwMWqL)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
@@ -156,21 +160,19 @@ Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
 ```
 
+creating your own observables
+Observable.of()
+
+```js
+Observable.create()
+```
+
 ```js
 .forkJoin()
 ```
 
 ```js
 .flatMap()
-```
-creating your own observables
-
-```js
-Observable.of()
-```
-
-```js
-Observable.create()
 ```
 
 ---
