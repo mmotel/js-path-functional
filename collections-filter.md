@@ -2,6 +2,8 @@
 
 Filtorwanie pozwala wyciągnąć z tablicy te wartości, które spełniają zadany warunek.
 
+![](/assets/coll_filter.png)
+
 Wyciągnijmy z listy studentów tych, którzy są aktywni.
 
 Zaczniemy od wykorzystania pętli `for-of`.

@@ -2,6 +2,8 @@
 
 Mapowanie pozwala przekształcić tablicę wartości na tablicę innych wartości.
 
+![](/assets/coll_map.png)
+
 Przekształćmy tablicę studentów na tablicę ich imion oraz nazwisk.
 
 Zaczniemy od wykorzystania pętli `for-of`.

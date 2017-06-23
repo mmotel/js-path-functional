@@ -2,6 +2,8 @@
 
 Redukcja pozwala na akumulację wartości z tablicy do pojedynczego obiektu.
 
+![](/assets/coll_reduce.png)
+
 Obliczmy sumę wieku studentów.
 
 Ponownie zaczniemy od wykorzystania metody `Array.forEach()`.
