@@ -6,10 +6,12 @@ interactive vs reactive programming
 
 everything is a stream
 
+![](/assets/data_as_stream.png)
+
 
 ## RxJS
 
-MSFT libarary 
+MSFT and community libarary 
 reactive extensions
 
 > Think of RxJS as Lodash for events.
