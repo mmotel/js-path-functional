@@ -76,7 +76,7 @@ Rx.Observable.from([1, 2, 3, 4])
 
 filter
 
-![](/assets/stream_filter.png)
+![](/assets/stream_filter2.png)
 
 ##### [Przykład 3.4](https://codepen.io/mmotel/pen/YQQorW)
 ```js
