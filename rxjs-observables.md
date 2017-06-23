@@ -129,7 +129,7 @@ Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
 ```
 
-##### [Przykład 2.9]()
+##### [Przykład 2.9](https://codepen.io/mmotel/pen/gRRNVo)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
    .map(event => ({x: event.clientX, y: event.clientY}))
@@ -141,8 +141,19 @@ event handling
 
 handling http requests
 
+##### [Przykład 2.10](https://codepen.io/mmotel/pen/mwMWqL)
 ```js
-.catch()
+Rx.Observable.fromEvent(window, 'mousemove')
+   .map(event => ({
+      x: event.clientX, 
+      y: event.clientY, 
+      z: event.client.zIndex
+   }))
+   .catch(error => { 
+      console.log(`catched error: ${error.message}`); 
+      return Rx.Observable.of({x: 0, y:0, z: 0}); 
+   })
+   .subscribe(observer);
 ```
 
 ```js
