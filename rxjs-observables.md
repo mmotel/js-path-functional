@@ -176,8 +176,23 @@ Rx.Observable.create(observer => {
 .subscribe(observer);
 ```
 
+##### [Przykład 3.12](https://codepen.io/mmotel/pen/YQxVYg)
 ```js
-.forkJoin()
+let stream1$ = Rx.Observable.create(observer => {
+   observer.next(1);
+   observer.complete();
+});
+
+let stream2$ = Rx.Observable.create(observer => {
+   setTimeout(() => {
+      observer.next(2);
+      observer.complete();
+   }, 1000);
+});
+
+Rx.Observable
+   .forkJoin(stream1$, stream2$)
+   .subscribe(observer);
 ```
 
 ```js
