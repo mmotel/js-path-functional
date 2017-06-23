@@ -2,6 +2,8 @@
 
 interactive vs reactive programming
 
+![](/assets/interactive_vs_reactive.png)
+
 everything is a stream
 
 
