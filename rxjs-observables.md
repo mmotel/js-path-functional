@@ -32,7 +32,7 @@ Jest ona rozwijana przez _Microsoft_ ze wsparciem społeczności.
 
 ### Observable
 
-Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i raektywnego. 
+Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są one przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i raektywnego. 
     
 ##### [Przykład 3.1](https://codepen.io/mmotel/pen/gRRNbM)
 ```js
@@ -217,7 +217,7 @@ Rx.Observable.fromEvent(window, 'mousemove')
 
 Pozwala ona na obsłużenie błędu i przekazanie do subskrybenta innej wartości lub lepszego komuniaktu o błędzie.
 
-##### Tworzenie obiektów typu `Rx.Observable`
+### Tworzenie obiektów typu `Rx.Observable`
 
 Poznaliśmy już kilka sposobów na utworzenie strumienia. `Rx.Observable.from()` pozwala utworzyć strumień z obiektu iterowalnego. `Rx.Observable.fromEvent()` ze zdarzeń a `Rx.Observable.of()` ` pojedynczej wartości. Biblioteka `RxJS` dostarcza jeszcze wiele przydatnych metod pozwalających na tworzenie strumieni.
 
