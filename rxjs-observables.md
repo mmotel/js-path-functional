@@ -30,6 +30,7 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'item: 4'
 ```
     
+Observable.from()
     
 Observer
     next error complete
@@ -163,8 +164,16 @@ Rx.Observable.fromEvent(window, 'mousemove')
 creating your own observables
 Observable.of()
 
+##### [Przykład 3.11](https://codepen.io/mmotel/pen/RgZVGv)
 ```js
-Observable.create()
+Rx.Observable.create(observer => {
+   observer.next(1);
+   observer.next(2);
+   observer.next(3);
+   observer.next(4);
+   observer.complete();
+})
+.subscribe(observer);
 ```
 
 ```js

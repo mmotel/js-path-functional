@@ -46,6 +46,12 @@ function greet (name, age, city) {
 console.log( greet.length ); // -> 3
 ```
 
+## Funkcje wyższego poziomu
+
+ang. _High order functions_
+
+// TODO
+
 ## Czego brakuje w JavaScript?
 
 Jednak JavaScript nie jest w pełni językiem funkcyjnym. Brakuje mu kliku ważnych elementów.
