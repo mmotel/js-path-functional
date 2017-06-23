@@ -8,7 +8,7 @@ Na pomoc przychodzi programowanie reaktywne. Teraz obiekt _A_ wystawia specjalny
 
 ![](/assets/interactive_vs_reactive.png)
 
-Opisana powyżej komunikacja obiektów _A_ i _B_ przez specjalny interfejs jest zastosowaniem wzorzeca obserwatora.
+Opisana powyżej komunikacja obiektów _A_ i _B_ przez specjalny interfejs jest zastosowaniem [wzorzeca obserwatora](https://bigismall.gitbooks.io/ecmascript-design-patterns/content/obserwator.html).
 
 everything is a stream
 
