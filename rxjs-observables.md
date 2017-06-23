@@ -10,9 +10,17 @@ Na pomoc przychodzi programowanie reaktywne. Teraz obiekt _A_ wystawia specjalny
 
 Opisana powyżej komunikacja obiektów _A_ i _B_ przez specjalny interfejs jest zastosowaniem [wzorzeca obserwatora](https://bigismall.gitbooks.io/ecmascript-design-patterns/content/obserwator.html).
 
-everything is a stream
+## _everything is a stream_
 
 ![](/assets/data_as_stream2.png)
+
+W przypadku aplikacji wszystkie występujące zdarzenia mogą być traktowane jako strumień zdarzeń. Użytkownik klika przycisk - zdarzenie. Kursor myszy jest umieszczany w pewnym obszarze - zdarzenie. Zmienia się czas na zegarze - zdarzenie. Taki strumień zdarzeń jest dostawcą danych.
+
+W programowaniu reaktywnym wszyscy dostawcy danych są ujednoliceni i przedstawiani jako obserwowalny strumień. Strumień to sekwencja uporządkowanych zdarzeń zachodzących w czasie. 
+
+Aby pobrać wartość ze strumienia, trzeba go zasubskrybować. Obiekt subskrybowalny to dowolny obiekt z danymi, który implementuje wzorzec obserwatora.
+
+W przypadku obserwowalnego strumienia zdarzeń najprościej nie myśleć o nim jak o strumieniach lecz jak o tablicach. Można na nich wykonać operacje typowe dla tablic takie jak mapowanie czy filtrowanie.
 
 ## RxJS
 
