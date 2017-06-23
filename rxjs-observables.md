@@ -24,14 +24,15 @@ W przypadku obserwowalnego strumienia zdarzeń najprościej nie myśleć o nim j
 
 ## RxJS
 
-MSFT and community libarary 
-reactive extensions
+[RxJS](http://reactivex.io/rxjs/) (_Reactive Extensions for JavaScript_) jest reaktywną biblioteką, która umożliwia zgrabne łączenie kodu asynchronicznego i opartego na zdarzeniach. Zapewnia ona wysoki poziom abstrakcji i wiele operacji dających dodatkowe możliwości.
 
-> Think of RxJS as Lodash for events.
+> Think of RxJS as [Lodash](https://lodash.com) for events.
 
-## Observable
+Jest ona rozwijana przez _Microsoft_ ze wsparciem społeczności.
 
-Observable
+### Observable
+
+Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i raektywnego. 
     
 ##### [Przykład 3.1](https://codepen.io/mmotel/pen/gRRNbM)
 ```js
@@ -45,10 +46,9 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'item: 4'
 ```
     
-Observable.from()
+Metoda `Rx.Observable.from()` pozwala stworzyć strumień z tablicy, który emituje jej elementy jako kolejne zdarzenia. Aby pobrać elementy ze strumienia korszystamy z metody `Observable.subscribe()` i przekazujemy do niej _callback_ nazywany też _Observer-em_.
     
-Observer
-    next error complete
+Metoda `Observable.subscribe()` przyjmuje jako parametr trzy funkcje.
     
 ##### [Przykład 3.2](https://codepen.io/mmotel/pen/weeLJq)
 ```js
@@ -67,10 +67,21 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
-Operators
-    map filter do merge retry
+Pierwsza z funkcji - _next_ - odpowiada za obsługę kolejnych elementów strumienia. 
+
+Druga - _error_ - za zakończenie przetwarzania spowodowane błędem.
+
+Trzecia - _complete_ -za zakończenie przetwarzania strumienia.
+
+Możemy podać dowolną ilość funkcji, jednak zawsze trzeba pamiętać o ich kolejności. 
+
+### Operatory
+
+Biblioteka `RxJS` zapewnia zbiór operatorów do przetwarzania strumieni, część z nich znamy już z przetwarzania kolekcji - _map_, _filter_.
+
+##### Mapowanie strumienia
     
- map
+Operator `Rx.Observable.map()` pozwala na mapowanie wartości elementów strumienia podobnie jak metoda `Array.map()`.
  
 ![](/assets/stream_map.png)
  
@@ -86,7 +97,9 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
-filter
+##### Filtrowanie strumienia
+
+Metoda `Rx.Observable.filter()` pozwala na filtrowanie elementów strumienia, podobnie jak metoda `Array.filter()`.
 
 ![](/assets/stream_filter2.png)
 
@@ -100,8 +113,11 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 
 ```
-    
-do
+  
+##### Operator `Rx.Observable.do()` 
+
+Pozwala na wykonanie zadanej akcji bez wypływania na elementy strumienia. Możemy go wykorzystać do wypisania wartości elementu na przykład podczas debugowania.
+
 ##### [Przykład 3.5](https://codepen.io/mmotel/pen/KqqjyB)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -118,7 +134,9 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
-merge
+##### Scalanie strumieni
+
+Operator `Rx.Observable.merge()` pozwala scalić dwa strumienie zdarzeń w jeden, podobnie jak metoda `Array.concat()`.
 
 ![](/assets/stream_merge.png)
 
@@ -140,7 +158,10 @@ stream1$
 // -> 'complete'
 ```
 
-take
+##### Ograniczanie strumienia
+
+Operator `Rx.Observable.take()` pozwala ograniczyć ilość elementów pobieranych ze strumienia i jego zakończenie.
+
 ##### [Przykład 3.7](https://codepen.io/mmotel/pen/dRRBwp)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -151,14 +172,21 @@ Rx.Observable.from([1, 2, 3, 4])
 // -> 'complete'
 ```
 
-examples for asynchronous actions
-event handling
-fromEvent
+##### Obsługa zdarzeń
+
+Obserwowalne strumienie idealnie nadają się do obsługi asynchronicznych akcji oraz zdarzeń.
+
+Aby stworzyć strumienień ze zdarzeń skorzystamy z metody `Rx.Observable.fromEvent()`. Przyjmuje ona dwa parametry: element oraz typ zdarzenia.
+
+Utworzymy strumień ze zdarzeń `mousemove`, które są wyzwalane na elemencie `window`.
+
 ##### [Przykład 2.8](https://codepen.io/mmotel/pen/RggzzZ)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
 ```
+
+Jednak interesują nas jedynie te ruchy myszy, które odbywają się w kwadracie 200 na 200 pikseli w lewym górnym rogu ekranu. Skorzystamy z mapowania i filtrowania strumieni aby ograniczyć zdarzenia tylko do tego obszaru.
 
 ##### [Przykład 2.9](https://codepen.io/mmotel/pen/gRRNVo)
 ```js
@@ -168,8 +196,10 @@ Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
 ```
 
-event handling
-catch
+##### Obsługa błędów
+
+Zawsze musimy się liczyć, że coś może pójść nie po naszej myśli. Aby zabezpieczyć się przed błędami, które mogą pojawić się w czasie przetwarzania stumienia wykorzystamy metodę `Rx.Observable.catch()`. 
+
 ##### [Przykład 2.10](https://codepen.io/mmotel/pen/mwMWqL)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
@@ -185,8 +215,13 @@ Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
 ```
 
-creating your own observables
-Observable.of()
+Pozwala ona na obsłużenie błędu i przekazanie do subskrybenta innej wartości lub lepszego komuniaktu o błędzie.
+
+##### Tworzenie obiektów typu `Rx.Observable`
+
+Poznaliśmy już kilka sposobów na utworzenie strumienia. `Rx.Observable.from()` pozwala utworzyć strumień z obiektu iterowalnego. `Rx.Observable.fromEvent()` ze zdarzeń a `Rx.Observable.of()` ` pojedynczej wartości. Biblioteka `RxJS` dostarcza jeszcze wiele przydatnych metod pozwalających na tworzenie strumieni.
+
+Przyjrzyjmy się jak samemu utworzyć strumień. Pozwala na to metoda  `Rx.Observable.create()`. Przyjmuje ona jako parametr funkcję, która jest odpowiedzialna za generowanie elementów strumienia i jego ewentualne zakończenie - nazywaną _subscribe_. 
 
 ##### [Przykład 3.11](https://codepen.io/mmotel/pen/RgZVGv)
 ```js
@@ -200,7 +235,16 @@ Rx.Observable.create(observer => {
 .subscribe(observer);
 ```
 
-forkJoin
+Funkcja _subscribe_ przyjmuje jako argument obiekt _observer_, który podobnie jak omawiany wcześniej _Observer_, posiada trzy metody:
+
+* `observer.next()` - emituje kolejny element strumienia,
+* `observer.complete()` - zamyka strumień,
+* `observer.error()` - zamyka strumień zwracając błąd błędem.
+
+##### Jednoczesne wykonywanie strumieni
+
+Podczas obsługi asynchronicznych akcji, na przykład komunikacji z serwerem, zdarza się, że chcemy jednocześnie wykonać kilka strumieni. Pozwala na to metoda `Rx.Observable.forkJoin()`, która subskrybuje kilka strumieni, agreguje ostatnie zwrócone przez nie wartości i kończy działanie kiedy wszystkie strumienie zostaną zakończone.
+
 ##### [Przykład 3.12](https://codepen.io/mmotel/pen/YQxVYg)
 ```js
 let stream1$ = Rx.Observable.create(observer => {
@@ -220,7 +264,10 @@ Rx.Observable
    .subscribe(observer);
 ```
 
-flatMap
+##### _Chain-owanie_ strumieni
+
+Podczas komunikacji z serwerem często zdarza się tak, że jedno zapytanie jest zależne od drugiego - wymaga zwróconej przez nie wartości. Możemy dokonać _chain-owania_ strumieni wykorzystując metodę `Rx.Observable.flatMap()`.
+
 ##### [Przykład 3.13](https://codepen.io/mmotel/pen/zzdwRR)
 ```js
 let stream1$ = Rx.Observable.of(3);
@@ -241,6 +288,8 @@ stream1$
 
 ###### Źródła
 
+* _JavaScript i wzorce projektowe_, wydanie II - Simon Timms,
+* _Programowanie funkcyjne z JavaScriptem. Sposoby na lepszy kod_ - Luis Atencio, 
 * http://reactivex.io/learnrx/
 * https://xgrommx.github.io/rx-book/why_rx.html
 * http://reactivex.io/documentation/observable.html
