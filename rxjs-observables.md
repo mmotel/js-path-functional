@@ -1,8 +1,14 @@
 # Programowanie reaktywne
 
-interactive vs reactive programming
+Programowanie reaktywne najłatwiej opisać posługując się przykładem. Załóżmy, że mamy dwa obiekty _A_ i _B_, które są ze sobą powiązane - obiekt _B_ potrzebuje do poprawnego działania stanu obiektu _A_. Gdy stan obiektu _A_ ulega zmianie należy zaktualizować informacje, które posiada obiekt _B_.
+
+W programowaniu interaktywnym to obiekt _A_ musi wiedzieć jakie inne obiekty od niego należą i co należy zrobić aby je poinformować o zmianie swojego stanu. Wraz z rozrastaniem się aplikacji, ilość obiektów zależnych od _A_ będzie rosła i w końcu utrzymanie stanie się bardzo trudne.
+
+Na pomoc przychodzi programowanie reaktywne. Teraz obiekt _A_ wystawia specjalny interfejs, przez który informuje o zmianie swojego stanu. To obiekt _B_ musi skorzystać z tego interfejsu i zaktualizować swój stan. Zwiększenie ilości obiektów zależnych od _A_ nie powoduje zmian jego implementacji.
 
 ![](/assets/interactive_vs_reactive.png)
+
+Opisana powyżej komunikacja obiektów _A_ i _B_ przez specjalny interfejs jest zastosowaniem wzorzeca obserwatora.
 
 everything is a stream
 
@@ -14,8 +20,6 @@ MSFT and community libarary
 reactive extensions
 
 > Think of RxJS as Lodash for events.
-
-## observer - subscriber pattern
 
 ## Observable
 
