@@ -6,8 +6,7 @@ interactive vs reactive programming
 
 everything is a stream
 
-![](/assets/data_as_stream.png)
-
+![](/assets/data_as_stream2.png)
 
 ## RxJS
 
@@ -60,6 +59,9 @@ Operators
     map filter do merge retry
     
  map
+ 
+![](/assets/stream_map.png)
+ 
 ##### [Przykład 3.3](https://codepen.io/mmotel/pen/jwwjwx)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -73,6 +75,9 @@ Rx.Observable.from([1, 2, 3, 4])
 ```
 
 filter
+
+![](/assets/stream_filter.png)
+
 ##### [Przykład 3.4](https://codepen.io/mmotel/pen/YQQorW)
 ```js
 Rx.Observable.from([1, 2, 3, 4])
@@ -102,6 +107,9 @@ Rx.Observable.from([1, 2, 3, 4])
 ```
 
 merge
+
+![](/assets/stream_merge.png)
+
 ##### [Przykład 3.6](https://codepen.io/mmotel/pen/KqqjyB)
 ```js
 let stream1$ = Rx.Observable.from([1, 2, 3, 4]);
