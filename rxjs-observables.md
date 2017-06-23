@@ -176,6 +176,7 @@ Rx.Observable.create(observer => {
 .subscribe(observer);
 ```
 
+forkJoin
 ##### [Przykład 3.12](https://codepen.io/mmotel/pen/YQxVYg)
 ```js
 let stream1$ = Rx.Observable.create(observer => {
@@ -195,8 +196,21 @@ Rx.Observable
    .subscribe(observer);
 ```
 
+flatMap
+##### [Przykład 3.13](https://codepen.io/mmotel/pen/zzdwRR)
 ```js
-.flatMap()
+let stream1$ = Rx.Observable.of(3);
+
+let stream2$ = (count) => Rx.Observable.create(observer => {
+   for(let i = 0; i < count; i += 1) {
+      observer.next(i);
+   }
+   observer.complete();
+});
+
+stream1$
+   .flatMap(count => stream2$(count))
+   .subscribe(observer);
 ```
 
 ---
