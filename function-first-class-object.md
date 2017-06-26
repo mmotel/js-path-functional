@@ -46,11 +46,20 @@ function greet (name, age, city) {
 console.log( greet.length ); // -> 3
 ```
 
-## Funkcje wyższego poziomu
+#### Funkcje wyższego poziomu
 
-ang. _High order functions_
+Funkcje wyższego pozioku (z ang. _high order functions_) są funkcjami, które przyjmują inne funkcje jako argumenty.
 
-// TODO
+##### [Przykład 1.5](https://codepen.io/mmotel/pen/JJrZjN)
+```js
+function applyAction (numbers, action) {
+  for (let number of numbers) {
+    action(number);
+  }
+}
+
+applyAction([1, 2, 3, 4], console.log);
+```
 
 ## Czego brakuje w JavaScript?
 
