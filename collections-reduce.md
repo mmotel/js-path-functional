@@ -201,8 +201,6 @@ log(adultStudents);
 
 (2.3.1) Wyciągnij z listy studentów napis zawierający ich imiona oraz nazwiska oddzielone przecinkami.
 
-(2.3.2) // todo map-reduce
-
 ---
 
 ##### Źródła
