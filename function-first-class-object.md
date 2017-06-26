@@ -2,6 +2,8 @@
 
 JavaScript jest językiem obiektowo-funkcyjnym. Jego twórca, Brendan Eich, miał za zadanie stworzyć język, który będzie `Scheme` w przedlądarce oraz będzie wyglądał jak `Java`. 
 
+![](/assets/brendan-eich.jpg)
+
 W JavaScript wszystko jest obiektem, również funkcja. A dokładniej funkcje są obiektami pierwszej klasy. Oznacza to, że możemy z nimi zrobić dokładnie to samo co z innymi obiektami. Ważną cechą funkcji jest to, że mogą zostać wywołane przy użyciu `()`.
 
 Możemy przypisać funkcję do zmiennej.
