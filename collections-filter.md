@@ -101,8 +101,6 @@ console.log(namesWithN);
 // -> ["Christina", "Austin", "Hawkins"]
 ```
 
-task 
-
 ---
 
 ### Ćwiczenia
