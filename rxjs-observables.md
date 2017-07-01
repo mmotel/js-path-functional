@@ -32,7 +32,7 @@ Jest ona rozwijana przez _Microsoft_ ze wsparciem społeczności.
 
 ### Observable
 
-Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są one przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i raektywnego. 
+Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są one przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i reaktywnego. 
     
 ##### [Przykład 3.1](https://codepen.io/mmotel/pen/gRRNbM)
 ```js
