@@ -63,13 +63,54 @@ function applyAction (numbers, action) {
 applyAction([1, 2, 3, 4], console.log);
 ```
 
+Dzięki wykorzystaniu podejścia funkcyjnego możemy sprawić, że nasz kod stanie się bardziej czytelny, łatwiejszy w utrzymaniu i ponownym wykorzystaniu.
+
+Załóżmy, że mamy tablicę liczb od 1 do 10. Chcemy wypisać liczby parzyste. Zacznijmy od wersji imperatywnej.
+
+###### [Przykład 1.6](https://codepen.io/mmotel/pen/awYaQQ)
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (let num of numbers) {
+  if (num % 2 === 0) {
+    console.log(num);
+  }
+}
+// -> 2
+// -> 4
+// -> 6
+// -> 8
+// -> 10
+```
+
+Zobaczmy jak wygląda wersja funkcyjna tego kodu.
+
+##### [Przykład 1.7](https://codepen.io/mmotel/pen/xrWaMM)
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function printNumbers (numbers, printer, condition) {
+  numbers.forEach(num => {
+    if (condition(num)) {
+      printer(num);
+    }
+  });
+}
+
+const isEven = num => num % 2 === 0;
+
+printNumbers(numbers, console.log, isEven);
+```
+
+Ta wersja zapewnia nam dużą elastyczność. Możemy dowolnie sterować  działaniem funkcji `printNumbers()` podczas jej wywoływania.
+
 ## Czego brakuje w JavaScript?
 
 Jednak JavaScript nie jest w pełni językiem funkcyjnym. Brakuje mu kliku ważnych elementów.
 
 * czystych funkcji - _pure functions_ - czyli funkcji bez efektów ubocznych, np. `console.log()`,
 
-* niezmiennego stanu - możemy wykorzystać  `const` czy też `Object.freez` ,
+* niezmiennego stanu - możemy wykorzystać  `const` czy też `Object.freez()` ,
 
 * _tail call optimization_ - JavaScript wspiera rekursję ale nie obsługuje poprawnie optymalizacji rekursji.
 
