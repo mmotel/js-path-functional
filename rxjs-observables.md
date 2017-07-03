@@ -292,6 +292,61 @@ stream1$
    .subscribe(observer);
 ```
 
+### `Observables` w akcji
+
+##### Pobieranie danych na podstawie wartości pola
+
+Załóżmy, że mamy pole _input_, w którym znajdzie się zapytanie. Chcemy nasłuchiwać na jego zmiany i wykonać akcję tylko gdy długość zapytania jest równa lub większa niż 3.
+
+##### [Przykład 3.14](https://codepen.io/mmotel/pen/XgqRrP)
+```js
+let queryInput = document.querySelector('#query');
+
+Rx.Observable.fromEvent(queryInput, 'input')
+   .map(event => event.target.value)
+   .filter(value => value && value.length >= 3)
+   .subscribe(observer);
+```
+
+Gdy zapytanie jest odpowiednie pobieramy dane z API wykorzystując operator `Rx.Observble.ajax()`.
+
+#### [Przykład 3.15](https://codepen.io/mmotel/pen/GEdmWj)
+```js
+function search (query) {
+   let id = query.split('')
+      .map(c => c.charCodeAt(0))
+      .reduce((c, acc) => acc + c, 0) % 100 + 1;
+      
+   return Rx.Observable
+      .ajax(`https://jsonplaceholder.typicode.com/posts/${id}`);
+}
+
+let queryInput = document.querySelector('#query');
+
+Rx.Observable.fromEvent(queryInput, 'input')
+   .map(event => event.target.value)
+   .filter(value => value && value.length >= 3)
+   .flatMap(value => search(value))
+   .map(response => response.response)
+   .subscribe(observer);
+```
+
+Powstaje jednak pewny problem. Kiedy szybko wpisujemy zapytanie to wysyłanych jest wiele żądań i nie wiadomo w jakiej kolejności wrócą. Gdy wpisujemy zapytanie interesuje nas wynik ostatniego z żądań, poprzednie są zbędne i warto byłoby je anulować.
+
+##### [Przykład 3.16](https://codepen.io/mmotel/pen/dReWdY)
+```js
+Rx.Observable.fromEvent(queryInput, 'input')
+   .map(event => event.target.value)
+   .filter(value => value && value.length >= 3)
+   .switchMap(value => search(value))
+   .map(response => response.response)
+   .subscribe(observer);
+```
+
+Operator `Rx.Observable.switchMap()` zwróci nam wynik ostatniego z zapytań. Dodatkowo anuluje poprzednie żądania dzięki czemu nie będziemy niepotrzebnie obciążać serwera.
+
+##### Obsługa kilkania
+
 ---
 
 ###### Źródła
@@ -302,3 +357,4 @@ stream1$
 * https://xgrommx.github.io/rx-book/why_rx.html
 * http://reactivex.io/documentation/observable.html
 * [https://medium.com/@benlesh/learning-observable-by-building-observable](https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87)
+* https://typeofweb.com/2017/05/20/observable-rxjs/
