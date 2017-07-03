@@ -373,6 +373,7 @@ Operator `Rx.Observable.bufferCount()` pozwala na buforowanie określonej liczby
 
 Jednak to jeszcze nie to o co nam chodziło. Potrójne kliknięcie musi odbyć się w krótkim przedziale czasu, na przykład w przeciągu 400 milisekund.
 
+##### [P
 ```js
 let clicks$ = Rx.Observable.fromEvent(clickMeBtn, 'click');
 
