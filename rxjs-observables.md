@@ -33,6 +33,14 @@ Jest ona rozwijana przez _Microsoft_ ze wsparciem społeczności.
 ### Observable
 
 Typ `Rx.Observable` reprezentuje obserwowalny strumień. Dzięki niemu możemy pracować z dowolnym typem danych w ten sam sposób ponieważ są one przekształcane w strumień. Typ `Rx.Observable` łączy świat programowania funkcyjnego i reaktywnego. 
+
+`Observables` wypełniają brakujący element tabeli `pull-push`.
+
+Strategia `pull` zakłada, że producent jest pasywny i zwraca dane gdy konsument o to poprosi. Producent nie wie kiedy będzie działał, pełna kontrola leży po stronie konsumenta.
+
+Strategia `push` zakłada, że to producent jest aktywny i zwraca dane kiedy _chce_. Konsument jest stroną pasywną i jedynie reaguje na nadejście nowych informacji.
+
+![](/assets/pull-push-single-multi-table.png)
     
 ##### [Przykład 3.1](https://codepen.io/mmotel/pen/gRRNbM)
 ```js
