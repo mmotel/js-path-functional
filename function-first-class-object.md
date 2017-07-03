@@ -102,7 +102,7 @@ const isEven = num => num % 2 === 0;
 printNumbers(numbers, console.log, isEven);
 ```
 
-Ta wersja zapewnia nam dużą elastyczność. Możemy dowolnie sterować  działaniem funkcji `printNumbers()` podczas jej wywoływania.
+Ta wersja zapewnia nam dużą elastyczność. Możemy dowolnie sterować  działaniem funkcji `printNumbers()` podczas jej wywoływania. Dodatkowo wersja funkcyjna spełnia zasadę _RSP_ - (ang. _single responsibility principle_). Funkcja _isEven()_ ma jedno i tylko jedno zadanie - sprawdzić czy liczba jest parzysta. Podobnie funckja _printNumbers()_ zajmuje się wypisaniem liczb. Nie skupia się nad tym w jaki sposób je wypisać ani na tym, które z nich. 
 
 ## Czego brakuje w JavaScript?
 
