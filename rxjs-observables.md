@@ -347,6 +347,43 @@ Operator `Rx.Observable.switchMap()` zwróci nam wynik ostatniego z zapytań. Do
 
 ##### Obsługa kilkania
 
+Załóżmy, że mamy przycisk _Click me!_ i chcemy reagować na kliknięcia w niego.
+
+##### [Przykład 3.17](https://codepen.io/mmotel/pen/YQLVRp)
+```js
+let clickMeBtn = document.querySelector('#click-me');
+
+let clicks$ = Rx.Observable.fromEvent(clickMeBtn, 'click');
+
+clicks$.subscribe(observer);
+```
+
+Jednak interesują nas tylko potrójne kliknięcia. 
+
+##### [Przykład 3.18](https://codepen.io/mmotel/pen/pwVPBq)
+```js
+let clicks$ = Rx.Observable.fromEvent(clickMeBtn, 'click');
+
+clicks$
+   .bufferCount(3)
+   .subscribe(observer);
+```
+
+Operator `Rx.Observable.bufferCount()` pozwala na buforowanie określonej liczby zdarzeń i zwraca je jako tablicę.
+
+Jednak to jeszcze nie to o co nam chodziło. Potrójne kliknięcie musi odbyć się w krótkim przedziale czasu, na przykład w przeciągu 400 milisekund.
+
+```js
+let clicks$ = Rx.Observable.fromEvent(clickMeBtn, 'click');
+
+clicks$
+   .bufferWhen(() => clicks$.delay(400))
+   .filter(events => events.length >= 3)
+   .subscribe(observer);
+```
+
+Operator `Rx.Observable.bufferWhen()` zbie­ra wszyst­kie klik­nię­cia aż do mo­men­tu gdy prze­ka­za­na funk­cja coś wy­emi­tu­je. Ta ro­bi to dopie­ro po 400ms po klik­nię­ciu. Dzięki temu udało nam się wykryć potrójne kliknięcia, które miały miejsce w przeciągu maksymalnie 400 milisekund.
+
 ---
 
 ###### Źródła
