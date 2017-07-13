@@ -188,7 +188,7 @@ Aby stworzyć strumienień ze zdarzeń skorzystamy z metody `Rx.Observable.fromE
 
 Utworzymy strumień ze zdarzeń `mousemove`, które są wyzwalane na elemencie `window`.
 
-##### [Przykład 2.8](https://codepen.io/mmotel/pen/RggzzZ)
+##### [Przykład 3.8](https://codepen.io/mmotel/pen/RggzzZ)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
    .subscribe(observer);
@@ -196,7 +196,7 @@ Rx.Observable.fromEvent(window, 'mousemove')
 
 Jednak interesują nas jedynie te ruchy myszy, które odbywają się w kwadracie 200 na 200 pikseli w lewym górnym rogu ekranu. Skorzystamy z mapowania i filtrowania strumieni aby ograniczyć zdarzenia tylko do tego obszaru.
 
-##### [Przykład 2.9](https://codepen.io/mmotel/pen/gRRNVo)
+##### [Przykład 3.9](https://codepen.io/mmotel/pen/gRRNVo)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
    .map(event => ({x: event.clientX, y: event.clientY}))
@@ -208,7 +208,7 @@ Rx.Observable.fromEvent(window, 'mousemove')
 
 Zawsze musimy się liczyć, że coś może pójść nie po naszej myśli. Aby zabezpieczyć się przed błędami, które mogą pojawić się w czasie przetwarzania stumienia wykorzystamy metodę `Rx.Observable.catch()`. 
 
-##### [Przykład 2.10](https://codepen.io/mmotel/pen/mwMWqL)
+##### [Przykład 3.10](https://codepen.io/mmotel/pen/mwMWqL)
 ```js
 Rx.Observable.fromEvent(window, 'mousemove')
    .map(event => ({
