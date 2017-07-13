@@ -18,7 +18,7 @@ for (let student of students) {
   }
 }
 
-console.log(activeStudents);
+log(activeStudents);
 // -> (0) Christina Richmond
 // -> (2) Viola Shelton
 ```
